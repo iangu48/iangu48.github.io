@@ -83,6 +83,10 @@ function App() {
                 <ParticleBg/>
                 <AboutSection/>
             </section>
+            <section id="experience" className="flex ">
+                <ParticleBg/>
+                <ExperienceSection/>
+            </section>
 
 
 
@@ -304,7 +308,52 @@ function AboutSection() {
                     </Col>
                 </Row>
                 <Divider style={{background: "white", marginTop: "10px"}}/>
+                <Button type={"primary"} size={"large"} style={{marginBottom: "10px"}}>
+                    <Link to={"experience"} smooth={true} duration={700}>
+                        <Space size={10}>
+                            Work Experience <FontAwesomeIcon icon={faAngleDoubleDown}/>
+                        </Space>
+                    </Link>
+                </Button>
+            </Col>
+        </Row>
+    );
+}
 
+function ExperienceSection() {
+    return (
+        <Row className={"h100"} align={"middle"}>
+            <Col span={16} offset={6}>
+                <Title level={3} style={{color: "white", marginTop: "30px", fontWeight: 400}}>Work Experience</Title>
+
+                <Divider style={{background: "white", marginTop: "40px", marginBottom: "5px"}}/>
+                <Row align={"top"}>
+                    <Col span={12}>
+                        <Title level={4} style={{color: "white", textAlign: "left", marginBottom: 0, fontWeight: 350}}>Software Developer Intern</Title>
+                        <Title level={5} style={{color: "#c6c5b9ff", textAlign: "left", marginBottom: 0, marginTop: 0, fontWeight: 400}}>UTSC IITS (Toronto)</Title>
+                    </Col>
+                    <Col span={12}>
+                        <Title level={5} style={{color: "#c6c5b9ff", textAlign: "right", marginBottom: 0, fontWeight: 400}}>Sep 2019 - Apr 2020 (8 months)</Title>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <Text  style={{color: "#e0ca3cff", textAlign: "left"}}>
+                            Java (Spring Boot) · MySQL · Thymeleaf · HTML/CSS · Javascript
+
+                        </Text>
+                        {/*<Divider style={{marginTop: "2px", marginBottom: 0, background: "#c6c5b9ff"}}/>*/}
+                        <Paragraph style={{color: "#fdfdffff", textAlign: "left", marginBottom: 0}}>
+                            • Co-lead the migration of a legacy student service system from PHP backend to a modern Java
+                            Spring Boot version
+                            <br/>
+                            • Wrote migration scripts to rescheme database to fit different needs
+                            <br/>
+                            • Designed and refactored code to follow an MVC pattern with Spring Boot and Thymeleaf
+                        </Paragraph>
+                    </Col>
+                </Row>
+                <Divider style={{background: "white", marginTop: "10px"}}/>
             </Col>
         </Row>
     );
