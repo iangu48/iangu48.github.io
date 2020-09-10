@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import 'fontsource-roboto';
 import aboutMeIan from "./static/images/DSC_0044.jpg";
@@ -24,6 +24,9 @@ import gitIcon from "./static/icons/git.svg"
 import mySqlIcon from "./static/icons/mysql.svg"
 import htmlIcon from "./static/icons/html.svg"
 import cssIcon from "./static/icons/css.svg"
+import { Document, Page } from "react-pdf";
+import { pdfjs } from 'react-pdf';
+import resumeFile from "./static/files/resume.pdf"
 
 const ParticleBg = () => (
     <Particles className={"particles-js"}
@@ -86,6 +89,14 @@ function App() {
             <section id="experience" className="flex ">
                 <ParticleBg/>
                 <ExperienceSection/>
+            </section>
+            <section id="projects" className="flex ">
+                <ParticleBg/>
+                <ProjectsSection/>
+            </section>
+            <section id="resume" className="flex ">
+                <ParticleBg/>
+                <ResumeSection/>
             </section>
 
 
@@ -324,7 +335,7 @@ function ExperienceSection() {
     return (
         <Row className={"h100"} align={"middle"}>
             <Col span={16} offset={6}>
-                <Title level={3} style={{color: "white", marginTop: "30px", fontWeight: 400}}>Work Experience</Title>
+                <Title level={3} style={{color: "white", marginTop: "30px", fontWeight: 400}}>Relevant Work Experience</Title>
 
                 <Divider style={{background: "white", marginTop: "40px", marginBottom: "5px"}}/>
                 <Row align={"top"}>
@@ -354,6 +365,44 @@ function ExperienceSection() {
                     </Col>
                 </Row>
                 <Divider style={{background: "white", marginTop: "10px"}}/>
+            </Col>
+        </Row>
+    );
+}
+
+function ProjectsSection() {
+    return (
+        <Row className={"h100"}>
+
+        </Row>
+    );
+}
+
+function ResumeSection() {
+    pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+
+    const [numPages, setNumPages] = useState(null);
+    const [pageNumber, setPageNumber] = useState(1);
+
+    function onDocumentLoadSuccess({ numPages }) {
+        setNumPages(numPages);
+    }
+    return (
+        <Row className={"h100"} justify={"center"} align={"middle"}>
+            <Col offset={1}>
+                <Title level={3} style={{color: "white", marginTop: "30px", fontWeight: 400}}>Resume</Title>
+            </Col>
+            <Col>
+                <Divider type={"vertical"}/>
+            </Col>
+            <Col offset={1}>
+                <Document
+                    file={resumeFile}
+                    onLoadSuccess={onDocumentLoadSuccess}
+                    // onLoadError={console.error}
+                >
+                    <Page pageNumber={pageNumber}/>
+                </Document>
             </Col>
         </Row>
     );

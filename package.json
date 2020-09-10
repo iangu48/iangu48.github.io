@@ -22,7 +22,8 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
     "@fortawesome/free-brands-svg-icons": "^5.14.0",
     "@svgr/webpack": "^5.4.0",
-    "react-particles-js": "^3.3.0"
+    "react-particles-js": "^3.3.0",
+    "react-pdf": "^5.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
