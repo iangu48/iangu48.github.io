@@ -37,17 +37,15 @@
 }
 
 .sidenav {
-  width: 30vw;
   position: fixed;
-  min-height: 100vh;
+  /*min-height: 100vh;*/
   padding-left: 20px;
 }
 
 
-.nav .nav-content {
-  max-width: 900px;
+.nav-content {
+  max-width: 300px;
   padding: 0 3rem;
-  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -71,12 +69,11 @@
   margin-left: 1rem;
   padding-right: 1rem;
   transition: margin-left 700ms;
-  font-weight: bold;
 }
 
 .nav-item:hover {
   color: black;
-  cursor: pointer;
+  cursor: auto;
   background: #bdc4cd;
   margin-left: 1rem;
 }

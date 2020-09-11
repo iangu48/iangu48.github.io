@@ -5,7 +5,7 @@ import aboutMeIan from "./static/images/DSC_0044.jpg";
 import welcomeIan from "./static/images/DSC_0189.jpg"
 import 'antd/dist/antd.css'
 import {Link} from "react-scroll";
-import {Avatar, Image, Card, Col, Layout, Typography, Button, Row, List, Space, Divider} from "antd";
+import {Avatar, Image, Card, Col, Layout, Typography, Button, Row, List, Space, Divider, BackTop} from "antd";
 import Title from "antd/lib/typography/Title";
 import Text from "antd/lib/typography";
 import Paragraph from "antd/lib/typography/Paragraph";
@@ -13,7 +13,13 @@ import {LinkedinFilled, GithubFilled} from "@ant-design/icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import 'font-awesome/css/font-awesome.min.css';
 import { faJs } from '@fortawesome/free-brands-svg-icons';
-import {faTerminal, faAngleDoubleDown} from "@fortawesome/free-solid-svg-icons";
+import {
+    faTerminal,
+    faAngleDoubleDown,
+    faAngleDoubleUp,
+    faArrowAltCircleUp,
+    faChevronUp
+} from "@fortawesome/free-solid-svg-icons";
 import Particles from 'react-particles-js';
 import dartIcon from "./static/icons/dart.svg"
 import herokuIcon from "./static/icons/heroku.svg"
@@ -78,6 +84,7 @@ const ParticleBg = () => (
 function App() {
     return (
         <Layout style={{background: "transparent"}}>
+
             <section id="welcome" className="flex">
                 <ParticleBg/>
                 <HomeSection/>
@@ -98,10 +105,21 @@ function App() {
                 <ParticleBg/>
                 <ResumeSection/>
             </section>
+            <section id="blog" className="flex ">
+                <ParticleBg/>
+                <BlogSection/>
+            </section>
+            <section id="contact" className="flex ">
+                <ParticleBg/>
+                <ContactSection/>
+            </section>
 
 
-
-
+            <BackTop>
+                <Button size={"large"} style={{marginBottom: "150px"}} shape={"circle"}>
+                        <FontAwesomeIcon icon={faChevronUp}/>
+                </Button>
+            </BackTop>
 
             {/*must be last*/}
             <SideNav/>
@@ -120,19 +138,21 @@ function SideNav() {
         </li>
     }
     return (
-        <Row className={"sidenav"} align={"middle"}>
-            <div className={"nav-content"}>
-                <ul className={"nav-items"}>
-                    <SideLink to={"welcome"} content={"Welcome"}/>
-                    <SideLink to={"about"} content={"About Me"}/>
-                    <SideLink to={"experience"} content={"Experience"}/>
-                    <SideLink to={"projects"} content={"Projects"}/>
-                    <SideLink to={"resume"} content={"Resume"}/>
-                    <SideLink to={"blog"} content={"Blog"}/>
-                    <SideLink to={"contact"} content={"Contact"}/>
-                </ul>
+        <Row className={"sidenav"} align={"middle"} justify={"center"}>
+            <Col>
+                <div className={"nav-content sidenav"}>
+                    <ul className={"nav-items"}>
+                        <SideLink to={"welcome"} content={"Welcome"}/>
+                        <SideLink to={"about"} content={"About Me"}/>
+                        <SideLink to={"experience"} content={"Experience"}/>
+                        <SideLink to={"projects"} content={"Projects"}/>
+                        <SideLink to={"resume"} content={"Resume"}/>
+                        <SideLink to={"blog"} content={"Blog"}/>
+                        <SideLink to={"contact"} content={"Contact"}/>
+                    </ul>
 
-            </div>
+                </div>
+            </Col>
         </Row>
     );
 }
@@ -267,7 +287,7 @@ function AboutSection() {
 
 
             <Col span={8} offset={0}>
-                <Title level={3} style={{color: "white", marginTop: "30px", fontWeight: 400}}>Education</Title>
+                <Title level={3} style={{color: "white", marginTop: "30px", fontWeight: 300}}>Education</Title>
                 <Divider style={{background: "white", marginTop: 0, marginBottom: "5px"}}/>
 
                 <Row align={"top"}>
@@ -290,7 +310,7 @@ function AboutSection() {
 
 
 
-                <Title level={3} style={{color: "white", marginTop: "70px", fontWeight: 400}}>Skills</Title>
+                <Title level={3} style={{color: "white", marginTop: "70px", fontWeight: 300}}>Skills</Title>
                 <Divider style={{background: "white", marginTop: 0, marginBottom: "10px"}}/>
                 <Row>
                     <Col span={12}>
@@ -333,9 +353,9 @@ function AboutSection() {
 
 function ExperienceSection() {
     return (
-        <Row className={"h100"} align={"middle"}>
-            <Col span={16} offset={6}>
-                <Title level={3} style={{color: "white", marginTop: "30px", fontWeight: 400}}>Relevant Work Experience</Title>
+        <Row className={"h100"} align={"middle"} justify={"center"}>
+            <Col span={16} offset={3}>
+                <Title level={2} style={{color: "white", marginTop: "30px", fontWeight: 300}}>Relevant Work Experience</Title>
 
                 <Divider style={{background: "white", marginTop: "40px", marginBottom: "5px"}}/>
                 <Row align={"top"}>
@@ -365,6 +385,13 @@ function ExperienceSection() {
                     </Col>
                 </Row>
                 <Divider style={{background: "white", marginTop: "10px"}}/>
+                <Button type={"primary"} size={"large"} style={{marginBottom: "10px", marginTop: "150px"}}>
+                    <Link to={"projects"} smooth={true} duration={700}>
+                        <Space size={10}>
+                            Projects <FontAwesomeIcon icon={faAngleDoubleDown}/>
+                        </Space>
+                    </Link>
+                </Button>
             </Col>
         </Row>
     );
@@ -372,8 +399,19 @@ function ExperienceSection() {
 
 function ProjectsSection() {
     return (
-        <Row className={"h100"}>
+        <Row className={"h100"} justify={"center"} align={"middle"}>
+            <Col offset={3} span={16}>
+                <Title level={2} style={{color: "white", marginTop: "30px", fontWeight: 300}}>My Projects</Title>
 
+                {/*todo*/}
+                <Button type={"primary"} size={"large"} style={{marginBottom: "10px", marginTop: "150px"}}>
+                    <Link to={"resume"} smooth={true} duration={700}>
+                        <Space size={10}>
+                            My Resume <FontAwesomeIcon icon={faAngleDoubleDown}/>
+                        </Space>
+                    </Link>
+                </Button>
+            </Col>
         </Row>
     );
 }
@@ -381,7 +419,9 @@ function ProjectsSection() {
 function ResumeSection() {
     pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
+    // eslint-disable-next-line no-unused-vars
     const [numPages, setNumPages] = useState(null);
+    // eslint-disable-next-line no-unused-vars
     const [pageNumber, setPageNumber] = useState(1);
 
     function onDocumentLoadSuccess({ numPages }) {
@@ -390,19 +430,67 @@ function ResumeSection() {
     return (
         <Row className={"h100"} justify={"center"} align={"middle"}>
             <Col offset={1}>
-                <Title level={3} style={{color: "white", marginTop: "30px", fontWeight: 400}}>Resume</Title>
-            </Col>
-            <Col>
-                <Divider type={"vertical"}/>
+                <Title level={2} style={{color: "white", marginTop: "30px", fontWeight: 300}}>Resume</Title>
+                <Button type={"primary"} size={"large"} style={{marginBottom: "10px", marginTop: "10px"}}>
+                    <Link to={"blog"} smooth={true} duration={700}>
+                        <Space size={10}>
+                            Blog <FontAwesomeIcon icon={faAngleDoubleDown}/>
+                        </Space>
+                    </Link>
+                </Button>
             </Col>
             <Col offset={1}>
-                <Document
-                    file={resumeFile}
-                    onLoadSuccess={onDocumentLoadSuccess}
-                    // onLoadError={console.error}
-                >
-                    <Page pageNumber={pageNumber}/>
-                </Document>
+                <Divider type={"vertical"} style={{background: "white", height: "85vh", marginRight: "0"}}/>
+            </Col>
+            <Col>
+                <Divider type={"vertical"} style={{background: "white", height: "90vh"}}/>
+            </Col>
+            <Col offset={0}>
+                <div style={{overflowY: "scroll", height: "95vh"}}>
+                    <Document
+                        renderMode={"svg"}
+                        file={resumeFile}
+                        onLoadSuccess={onDocumentLoadSuccess}
+                        // onLoadError={console.error}
+                    >
+                        <Page pageNumber={pageNumber} width={800}/>
+                    </Document>
+                </div>
+            </Col>
+            <Col>
+                <Divider type={"vertical"} style={{background: "white", height: "90vh", marginRight: 0}}/>
+            </Col>
+            <Col>
+                <Divider type={"vertical"} style={{background: "white", height: "85vh"}}/>
+            </Col>
+        </Row>
+    );
+}
+
+function BlogSection() {
+    return (
+        <Row className={"h100"} justify={"center"} align={"middle"}>
+            <Col offset={1}>
+                <Title level={2} style={{color: "white", marginTop: "30px", fontWeight: 300}}>Blog (prospective)</Title>
+                <Button type={"primary"} size={"large"} style={{marginBottom: "10px", marginTop: "10px"}}>
+                    <Link to={"contact"} smooth={true} duration={700}>
+                        <Space size={10}>
+                            Contact me <FontAwesomeIcon icon={faAngleDoubleDown}/>
+                        </Space>
+                    </Link>
+                </Button>
+            </Col>
+        </Row>
+    );
+}
+
+function ContactSection() {
+    return (
+        <Row className={"h100"} justify={"center"} align={"middle"}>
+            <Col offset={1}>
+                <Title level={2} style={{color: "white", marginTop: "30px", fontWeight: 300}}>Contact Me</Title>
+
+
             </Col>
         </Row>
     );
