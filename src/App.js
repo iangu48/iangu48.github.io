@@ -273,16 +273,19 @@ function AboutSection() {
 
             <Col span={8} offset={6}>
                 <Card hoverable cover={<Image src={aboutMeIan} style={{marginTop: "-1px"}}/>} style={{maxWidth: 400}}>
-                    <Typography>
+                    <Typography style={{textAlign: "justify"}}>
                         I'm a full-time student and aspiring software engineer.
-                        <br/>
                         I'm always open to expanding my skill set and experiencing new things.
                         <br/>
-                        {/*todo*/}
-                        All of the words in Lorem Ipsum have flirted with me - consciously or unconsciously. That's to be expected. We have so many things that we have to do better... and certainly ipsum is one of them. An ‘extremely credible source’ has called my office and told me that Barack Obama’s placeholder text is a fraud. You could see there was text coming out of her eyes, text coming out of her wherever. I was going to say something extremely rough to Lorem Ipsum, to its family, and I said to myself, "I can't do it. I just can't do it. It's inappropriate. It's not nice."
                         <br/>
-                        Lorem Ipsum better hope that there are no "tapes" of our conversations before he starts leaking to the press! An ‘extremely credible source’ has called my office and told me that Barack Obama’s placeholder text is a fraud. It’s about making placeholder text great again. That’s what people want, they want placeholder text to be great again.
+                        I've recently taken up photography and learned a lot shooting on my Nikon D5600 and editing on
+                        Lightroom.
                         <br/>
+                        <br/>
+                        Before that, I got super interested in gardening and turned my backyard into a vegetable garden.
+                        I grew cucumbers, tomatoes, pole beans, peppers, pumpkins, lettuce, spinach, ... the list goes
+                        on and on.
+                    {/*    todo*/}
                     </Typography>
                 </Card>
             </Col>
@@ -463,7 +466,7 @@ function ProjectsSection() {
                                                 Bubble
                                             </Title>
                                             <Text style={{color: "#86867f"}}>
-                                                Javascript · Express · Google Cloud Services · Heroku
+                                                Javascript · Express · Google Cloud API · Heroku
                                             </Text>
                                         </div>
                                     }
@@ -479,11 +482,12 @@ function ProjectsSection() {
                     </Col>
 
                     <Col span={8}>
-
+                        <Title level={3} style={{color: "#fdfdffff", fontWeight: 300, marginTop: 200}}>
+                            Coming soon..
+                        </Title>
                     </Col>
                 </Row>
 
-                {/*todo*/}
                 <Button type={"primary"} size={"large"} style={{marginBottom: "10px", marginTop: "150px"}}>
                     <Link to={"resume"} smooth={true} duration={700}>
                         <Space size={10}>
