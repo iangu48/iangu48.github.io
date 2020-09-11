@@ -5,7 +5,7 @@ import aboutMeIan from "./static/images/DSC_0044.jpg";
 import welcomeIan from "./static/images/DSC_0189.jpg"
 import 'antd/dist/antd.css'
 import {Link} from "react-scroll";
-import {Avatar, Image, Card, Col, Layout, Typography, Button, Row, List, Space, Divider, BackTop} from "antd";
+import {Avatar, Image, Card, Col, Layout, Typography, Button, Row, List, Space, Divider, BackTop, Carousel} from "antd";
 import Title from "antd/lib/typography/Title";
 import Text from "antd/lib/typography";
 import Paragraph from "antd/lib/typography/Paragraph";
@@ -13,13 +13,7 @@ import {LinkedinFilled, GithubFilled} from "@ant-design/icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import 'font-awesome/css/font-awesome.min.css';
 import { faJs } from '@fortawesome/free-brands-svg-icons';
-import {
-    faTerminal,
-    faAngleDoubleDown,
-    faAngleDoubleUp,
-    faArrowAltCircleUp,
-    faChevronUp
-} from "@fortawesome/free-solid-svg-icons";
+import { faTerminal, faAngleDoubleDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import Particles from 'react-particles-js';
 import dartIcon from "./static/icons/dart.svg"
 import herokuIcon from "./static/icons/heroku.svg"
@@ -33,6 +27,14 @@ import cssIcon from "./static/icons/css.svg"
 import { Document, Page } from "react-pdf";
 import { pdfjs } from 'react-pdf';
 import resumeFile from "./static/files/resume.pdf"
+import spo2fi1 from "./static/images/spo2fi_1.png"
+import spo2fi2 from "./static/images/spo2fi_2.png"
+import spo2fi3 from "./static/images/spo2fi_3.png"
+import spo2fi4 from "./static/images/spo2fi_4.png"
+import bubble1 from "./static/images/bubble_1.png"
+import bubble2 from "./static/images/bubble_2.png"
+import bubble3 from "./static/images/bubble_3.png"
+import bubble4 from "./static/images/bubble_4.png"
 
 const ParticleBg = () => (
     <Particles className={"particles-js"}
@@ -369,7 +371,7 @@ function ExperienceSection() {
                 </Row>
                 <Row>
                     <Col>
-                        <Text  style={{color: "#e0ca3cff", textAlign: "left"}}>
+                        <Text style={{color: "#e0ca3cff", textAlign: "left"}}>
                             Java (Spring Boot) · MySQL · Thymeleaf · HTML/CSS · Javascript
 
                         </Text>
@@ -402,6 +404,84 @@ function ProjectsSection() {
         <Row className={"h100"} justify={"center"} align={"middle"}>
             <Col offset={3} span={16}>
                 <Title level={2} style={{color: "white", marginTop: "30px", fontWeight: 300}}>My Projects</Title>
+
+                <Row justify={"center"}>
+                    <Col span={8}>
+                        <a href={"https://spo2fi.herokuapp.com/"}>
+                            <Card
+                                type={"inner"}
+                                hoverable
+                                style={{width: 400, borderRadius: 10}}
+                                cover={
+                                    <Carousel autoplay style={{marginTop: 5}}>
+                                        <img src={spo2fi1} alt={"missing"}/>
+                                        <img src={spo2fi2} alt={"missing"}/>
+                                        <img src={spo2fi3} alt={"missing"}/>
+                                        <img src={spo2fi4} alt={"missing"}/>
+                                    </Carousel>
+                                }
+                            >
+                                <Card.Meta
+                                    title={
+                                        <div>
+                                            <Title level={3} style={{color: "#393d3fff"}}>
+                                                Spo2fi
+                                            </Title>
+                                            <Text style={{color: "#86867f"}}>
+                                                Python · Flask · Jinja · Spotify Web API · Heroku
+                                            </Text>
+                                        </div>
+                                    }
+                                    description={
+                                        "You ever get tired of passing the aux around your entire car? Well now " +
+                                        "everybody can have the aux! Just create a party and everybody can queue " +
+                                        "music from their own phones"
+                                    }
+                                />
+                            </Card>
+                        </a>
+                    </Col>
+                    <Col span={8}>
+                        <a href={"https://iangu.me/bubble-frontend/"}>
+                            <Card
+                                type={"inner"}
+                                hoverable
+                                style={{width: 400, borderRadius: 10}}
+                                cover={
+                                    <Carousel autoplay style={{marginTop: 5}}>
+                                        <img src={bubble1} alt={"missing"}/>
+                                        <img src={bubble2} alt={"missing"}/>
+                                        <img src={bubble3} alt={"missing"}/>
+                                        <img src={bubble4} alt={"missing"}/>
+                                    </Carousel>
+                                }
+                            >
+                                <Card.Meta
+                                    title={
+                                        <div>
+                                            <Title level={3} style={{color: "#393d3fff"}}>
+                                                Bubble
+                                            </Title>
+                                            <Text style={{color: "#86867f"}}>
+                                                Javascript · Express · Google Cloud Services · Heroku
+                                            </Text>
+                                        </div>
+                                    }
+                                    description={
+                                        "Originally starting as a project created during 36 hour hackathon, this " +
+                                        "program finds live, trending topics of the world every 30 minutes, and " +
+                                        "displays them in a nice wordcloud with the most popular keywords displayed " +
+                                        "the largest."
+                                    }
+                                />
+                            </Card>
+                        </a>
+                    </Col>
+
+                    <Col span={8}>
+
+                    </Col>
+                </Row>
 
                 {/*todo*/}
                 <Button type={"primary"} size={"large"} style={{marginBottom: "10px", marginTop: "150px"}}>
