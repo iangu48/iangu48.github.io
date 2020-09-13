@@ -537,7 +537,7 @@ function ResumeSection() {
                         onLoadSuccess={onDocumentLoadSuccess}
                         // onLoadError={console.error}
                     >
-                        <Page pageNumber={pageNumber} width={800}/>
+                        <Page pageNumber={pageNumber} width={800} renderAnnotationLayer={false}/>
                     </Document>
                 </div>
             </Col>
