@@ -17,13 +17,13 @@ import { faTerminal, faAngleDoubleDown, faChevronUp } from "@fortawesome/free-so
 import Particles from 'react-particles-js';
 import dartIcon from "./static/icons/dart.svg"
 import herokuIcon from "./static/icons/heroku.svg"
-import awsIcon from "./static/icons/aws.svg"
 import javaIcon from "./static/icons/java.svg"
 import pythonIcon from "./static/icons/python.svg"
 import gitIcon from "./static/icons/git.svg"
 import mySqlIcon from "./static/icons/mysql.svg"
 import htmlIcon from "./static/icons/html.svg"
 import cssIcon from "./static/icons/css.svg"
+import firebaseIcon from "./static/icons/firebase.svg";
 import { Document, Page } from "react-pdf";
 import { pdfjs } from 'react-pdf';
 import resumeFile from "./static/files/resume.pdf"
@@ -262,9 +262,9 @@ function AboutSection() {
             description: ''
         },
         {
-            avatar: <Avatar icon={<img src={awsIcon} alt={"error"} style={{padding: "7px", objectFit: "scale-down"}}/> } size={50} style={{background: "white"}}/>,
-            title: 'AWS (dipped my toes)',
-            description: 'Launched a few EC2 instances'
+            avatar: <Avatar icon={<img src={firebaseIcon} alt={"error"} style={{padding: "7px", objectFit: "scale-down"}}/> } size={50} style={{background: "white"}}/>,
+            title: 'Firebase',
+            description: 'Auth, Firestore, Storage'
         },
     ]
 
