@@ -13,7 +13,7 @@ import {LinkedinFilled, GithubFilled} from "@ant-design/icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import 'font-awesome/css/font-awesome.min.css';
 import { faJs } from '@fortawesome/free-brands-svg-icons';
-import { faTerminal, faAngleDoubleDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import { faTerminal, faAngleDoubleDown, faChevronUp, faEdit } from "@fortawesome/free-solid-svg-icons";
 import Particles from 'react-particles-js';
 import dartIcon from "./static/icons/dart.svg"
 import herokuIcon from "./static/icons/heroku.svg"
@@ -555,14 +555,30 @@ function BlogSection() {
     return (
         <Row className={"h100"} justify={"center"} align={"middle"}>
             <Col offset={1}>
-                <Title level={2} style={{color: "white", marginTop: "30px", fontWeight: 300}}>Blog (prospective)</Title>
-                <Button type={"primary"} size={"large"} style={{marginBottom: "10px", marginTop: "10px"}}>
-                    <Link to={"contact"} smooth={true} duration={700}>
-                        <Space size={10}>
-                            Contact me <FontAwesomeIcon icon={faAngleDoubleDown}/>
+                <Title level={2} style={{color: "white", marginTop: "30px", marginBottom: 0, fontWeight: 300}}>Blog (prospective)</Title>
+
+                <Space direction={"vertical"}>
+                        <Space direction={"horizontal"} align={"baseline"}>
+                            <FontAwesomeIcon icon={faEdit} color={"white"} style={{fontSize: 25}}/>
+                            <Typography.Link href={"https://blog.iangu.me"} style={{fontWeight: 300, fontSize: 26}}>
+                                https://blog.iangu.me
+                            </Typography.Link>
                         </Space>
-                    </Link>
-                </Button>
+
+                    <br/>
+                    <Title level={5} style={{color: "white", textAlign: "left", marginBottom: 100, fontWeight: 300}}>
+                        This is where I plan to write about whatever I want, whenever I want.
+                    </Title>
+
+                    <Button type={"primary"} size={"large"} style={{marginBottom: "10px", marginTop: "10px"}}>
+                        <Link to={"contact"} smooth={true} duration={700}>
+                            <Space size={10}>
+                                Contact me <FontAwesomeIcon icon={faAngleDoubleDown}/>
+                            </Space>
+                        </Link>
+                    </Button>
+                </Space>
+
             </Col>
         </Row>
     );
