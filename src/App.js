@@ -35,6 +35,9 @@ import bubble1 from "./static/images/bubble_1.png"
 import bubble2 from "./static/images/bubble_2.png"
 import bubble3 from "./static/images/bubble_3.png"
 import bubble4 from "./static/images/bubble_4.png"
+import blog1 from "./static/images/blog_1.png"
+import blog2 from "./static/images/blog_2.png"
+import blog3 from "./static/images/blog_3.png"
 
 const ParticleBg = () => (
     <Particles className={"particles-js"}
@@ -466,7 +469,7 @@ function ProjectsSection() {
                                                 Bubble
                                             </Title>
                                             <Text style={{color: "#86867f"}}>
-                                                Javascript · Express · Google Cloud API · Heroku
+                                                JavaScript · Express · Google Cloud API · Heroku
                                             </Text>
                                         </div>
                                     }
@@ -482,9 +485,38 @@ function ProjectsSection() {
                     </Col>
 
                     <Col span={8}>
-                        <Title level={3} style={{color: "#fdfdffff", fontWeight: 300, marginTop: 200}}>
-                            Coming soon..
-                        </Title>
+                        <a href={"https://blog.iangu.me"}>
+                            <Card
+                                type={"inner"}
+                                hoverable
+                                style={{width: 400, borderRadius: 10}}
+                                cover={
+                                    <Carousel autoplay style={{marginTop: 5}}>
+                                        <img src={blog1} alt={"missing"}/>
+                                        <img src={blog2} alt={"missing"}/>
+                                        <img src={blog3} alt={"missing"}/>
+                                    </Carousel>
+                                }
+                            >
+                                <Card.Meta
+                                    title={
+                                        <div>
+                                            <Title level={3} style={{color: "#393d3fff"}}>
+                                                Blog
+                                            </Title>
+                                            <Text style={{color: "#86867f"}}>
+                                                React.js · Firebase (Authentication, Firestore, Storage)
+                                            </Text>
+                                        </div>
+                                    }
+                                    description={
+                                        "This was a blog I built to write about whatever I want. It supports CRUD " +
+                                        "operations, user authentication, and all files shown are stored on Firebase. " +
+                                        "Take a look!"
+                                    }
+                                />
+                            </Card>
+                        </a>
                     </Col>
                 </Row>
 
