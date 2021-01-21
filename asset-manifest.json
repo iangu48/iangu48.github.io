@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/static/css/main.47b1799a.chunk.css",
-    "main.js": "/static/js/main.3a602343.chunk.js",
-    "main.js.map": "/static/js/main.3a602343.chunk.js.map",
+    "main.js": "/static/js/main.79574ba2.chunk.js",
+    "main.js.map": "/static/js/main.79574ba2.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.167bee95.js",
     "runtime-main.js.map": "/static/js/runtime-main.167bee95.js.map",
     "static/css/2.ed6b8d47.chunk.css": "/static/css/2.ed6b8d47.chunk.css",
-    "static/js/2.8c95e713.chunk.js": "/static/js/2.8c95e713.chunk.js",
-    "static/js/2.8c95e713.chunk.js.map": "/static/js/2.8c95e713.chunk.js.map",
+    "static/js/2.e0211544.chunk.js": "/static/js/2.e0211544.chunk.js",
+    "static/js/2.e0211544.chunk.js.map": "/static/js/2.e0211544.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.1f49b08bcc5918ebf723f6939f25bf5c.js": "/precache-manifest.1f49b08bcc5918ebf723f6939f25bf5c.js",
+    "precache-manifest.0affcadf12f68aaa58b75a3f010646c9.js": "/precache-manifest.0affcadf12f68aaa58b75a3f010646c9.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.ed6b8d47.chunk.css.map": "/static/css/2.ed6b8d47.chunk.css.map",
     "static/css/main.47b1799a.chunk.css.map": "/static/css/main.47b1799a.chunk.css.map",
-    "static/js/2.8c95e713.chunk.js.LICENSE.txt": "/static/js/2.8c95e713.chunk.js.LICENSE.txt",
+    "static/js/2.e0211544.chunk.js.LICENSE.txt": "/static/js/2.e0211544.chunk.js.LICENSE.txt",
     "static/media/DSC_0044.jpg": "/static/media/DSC_0044.fd41623e.jpg",
     "static/media/DSC_0189.jpg": "/static/media/DSC_0189.908c5828.jpg",
     "static/media/blog_1.png": "/static/media/blog_1.51d05cfd.png",
@@ -35,16 +35,21 @@
     "static/media/python.svg": "/static/media/python.9ecfb672.svg",
     "static/media/resume.pdf": "/static/media/resume.c652937a.pdf",
     "static/media/index.css": "/static/media/roboto-vietnamese-400-normal.a8be5b46.woff2",
+    "static/media/shipenvoy_1.png": "/static/media/shipenvoy_1.235fa3f8.png",
     "static/media/spo2fi_1.png": "/static/media/spo2fi_1.358daa54.png",
     "static/media/spo2fi_2.png": "/static/media/spo2fi_2.8179b786.png",
     "static/media/spo2fi_3.png": "/static/media/spo2fi_3.df294f3b.png",
-    "static/media/spo2fi_4.png": "/static/media/spo2fi_4.ac0537c9.png"
+    "static/media/spo2fi_4.png": "/static/media/spo2fi_4.ac0537c9.png",
+    "static/media/sportcred_1.png": "/static/media/sportcred_1.c6d40f76.png",
+    "static/media/sportcred_2.png": "/static/media/sportcred_2.0d002248.png",
+    "static/media/sportcred_3.png": "/static/media/sportcred_3.e4d0fb05.png",
+    "static/media/sportcred_4.png": "/static/media/sportcred_4.89f5e858.png"
   },
   "entrypoints": [
     "static/js/runtime-main.167bee95.js",
     "static/css/2.ed6b8d47.chunk.css",
-    "static/js/2.8c95e713.chunk.js",
+    "static/js/2.e0211544.chunk.js",
     "static/css/main.47b1799a.chunk.css",
-    "static/js/main.3a602343.chunk.js"
+    "static/js/main.79574ba2.chunk.js"
   ]
 }
