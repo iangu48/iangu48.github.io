@@ -38,6 +38,12 @@ import bubble4 from "./static/images/bubble_4.png"
 import blog1 from "./static/images/blog_1.png"
 import blog2 from "./static/images/blog_2.png"
 import blog3 from "./static/images/blog_3.png"
+import shipenvoy from "./static/images/shipenvoy_1.png"
+import sportcred1 from "./static/images/sportcred_1.png"
+import sportcred2 from "./static/images/sportcred_2.png"
+import sportcred3 from "./static/images/sportcred_3.png"
+import sportcred4 from "./static/images/sportcred_4.png"
+import { useMediaQuery } from 'react-responsive'
 
 const ParticleBg = () => (
     <Particles className={"particles-js"}
@@ -87,6 +93,8 @@ const ParticleBg = () => (
 );
 
 function App() {
+    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+
     return (
         <Layout style={{background: "transparent"}}>
 
@@ -127,7 +135,7 @@ function App() {
             </BackTop>
 
             {/*must be last*/}
-            <SideNav/>
+            {!isTabletOrMobile && <SideNav/>}
         </Layout>
     );
 }
@@ -165,8 +173,8 @@ function SideNav() {
 function HomeSection() {
 
     return (
-        <Row className={"h100"} align={"middle"}>
-            <Col align={"middle"} justify={"center"} span={24}>
+        <Row className={"h100"} align={"middle"} justify={"center"} xs={24}>
+            <Col align={"middle"} justify={"center"} span={24} xs={24}>
                 <div className={"circular--portrait"} style={{marginBottom: "30px"}}>
                     <img src={welcomeIan} alt={":("} />
                 </div>
@@ -272,9 +280,9 @@ function AboutSection() {
     ]
 
     return (
-        <Row justify={"start"} align={"middle"} className={"h100"}>
+        <Row justify={"center"} align={"middle"}>
 
-            <Col span={8} offset={6}>
+            <Col xxl={8} offset={3}>
                 <Card hoverable cover={<Image src={aboutMeIan} style={{marginTop: "-1px"}}/>} style={{maxWidth: 400}}>
                     <Typography style={{textAlign: "justify"}}>
                         I'm a full-time student and aspiring software engineer.
@@ -292,9 +300,7 @@ function AboutSection() {
                     </Typography>
                 </Card>
             </Col>
-
-
-            <Col span={8} offset={0}>
+            <Col xxl={8} offset={0}>
                 <Title level={3} style={{color: "white", marginTop: "30px", fontWeight: 300}}>Education</Title>
                 <Divider style={{background: "white", marginTop: 0, marginBottom: "5px"}}/>
 
@@ -368,8 +374,8 @@ function ExperienceSection() {
                 <Divider style={{background: "white", marginTop: "40px", marginBottom: "5px"}}/>
                 <Row align={"top"}>
                     <Col span={12}>
-                        <Title level={4} style={{color: "white", textAlign: "left", marginBottom: 0, fontWeight: 350}}>Software Developer Intern</Title>
-                        <Title level={5} style={{color: "#c6c5b9ff", textAlign: "left", marginBottom: 0, marginTop: 0, fontWeight: 400}}>UTSC IITS (Toronto)</Title>
+                        <Title level={4} style={{color: "white", textAlign: "left", marginBottom: 0, fontWeight: 350}}>UTSC IITS (Toronto)</Title>
+                        <Title level={5} style={{color: "#c6c5b9ff", textAlign: "left", marginBottom: 0, marginTop: 0, fontWeight: 400}}>Software Developer</Title>
                     </Col>
                     <Col span={12}>
                         <Title level={5} style={{color: "#c6c5b9ff", textAlign: "right", marginBottom: 0, fontWeight: 400}}>Sep 2019 - Apr 2020 (8 months)</Title>
@@ -383,6 +389,8 @@ function ExperienceSection() {
                         </Text>
                         {/*<Divider style={{marginTop: "2px", marginBottom: 0, background: "#c6c5b9ff"}}/>*/}
                         <Paragraph style={{color: "#fdfdffff", textAlign: "left", marginBottom: 0}}>
+                            • Reduced expected project duration by more than 4 months
+                            <br/>
                             • Co-lead the migration of a legacy student service system from PHP backend to a modern Java
                             Spring Boot version
                             <br/>
@@ -406,13 +414,81 @@ function ExperienceSection() {
 }
 
 function ProjectsSection() {
+    const s = {objectFit: "fill", height: 400, overflow: "hidden"}
     return (
-        <Row className={"h100"} justify={"center"} align={"middle"}>
+        <Row justify={"center"} align={"middle"}>
             <Col offset={3} span={16}>
                 <Title level={2} style={{color: "white", marginTop: "30px", fontWeight: 300}}>My Projects</Title>
 
-                <Row justify={"center"}>
-                    <Col span={8}>
+                <Row justify={"center"} gutter={[16,16]}>
+                    <Col xxl={8}>
+                        <a href={"https://shipenvoy.ca"}>
+                            <Card
+                                type={"inner"}
+                                hoverable
+                                style={{width: 400, borderRadius: 10}}
+                                cover={
+                                    <Carousel autoplay style={{marginTop: 5}}>
+                                        <img src={shipenvoy} alt={"missing"} style={{marginTop: 5}}/>
+                                    </Carousel>
+                                }
+                            >
+                                <Card.Meta
+                                    title={
+                                        <div>
+                                            <Title level={3} style={{color: "#393d3fff"}}>
+                                                Shipenvoy
+                                            </Title>
+                                            <Text style={{color: "#86867f"}}>
+                                                React.js · Parse-platform
+                                            </Text>
+                                        </div>
+                                    }
+                                    description={
+                                        "This is a platform I was paid to create for logistics company Shipenvoy. It " +
+                                        "allows users to ship packages internationally, and administrators to track " +
+                                        "inventory."
+                                    }
+                                />
+                            </Card>
+                        </a>
+                    </Col>
+                    <Col xxl={8}>
+                        <a href={"https://github.com/iangu48/sportcred"}>
+                            <Card
+                                type={"inner"}
+                                hoverable
+                                style={{width: 400, borderRadius: 10}}
+                                cover={
+                                    <Carousel autoplay style={{marginTop: 5}}>
+                                        <img src={sportcred1} alt={"missing"} style={s}/>
+                                        <img src={sportcred4} alt={"missing"} style={s}/>
+                                        <img src={sportcred2} alt={"missing"} style={s}/>
+                                        <img src={sportcred3} alt={"missing"} style={s}/>
+                                    </Carousel>
+                                }
+                            >
+                                <Card.Meta
+                                    title={
+                                        <div>
+                                            <Title level={3} style={{color: "#393d3fff"}}>
+                                                Sportcred
+                                            </Title>
+                                            <Text style={{color: "#86867f"}}>
+                                                React-native · Firebase
+                                            </Text>
+                                        </div>
+                                    }
+                                    description={
+                                        "Minimum viable product mobile application developed for a client which " +
+                                        "allows sports fans to show off their sports knowledge through trivia, " +
+                                        "debates, pick’ems, and more."
+                                    }
+                                />
+                            </Card>
+                        </a>
+                    </Col>
+                    <Col xxl={8}>
                         <a href={"https://spo2fi.herokuapp.com/"}>
                             <Card
                                 type={"inner"}
@@ -434,7 +510,7 @@ function ProjectsSection() {
                                                 Spo2fi
                                             </Title>
                                             <Text style={{color: "#86867f"}}>
-                                                Python · Flask · Jinja · Spotify Web API · Heroku
+                                                Python · Flask · Spotify Web API · Heroku
                                             </Text>
                                         </div>
                                     }
@@ -447,7 +523,7 @@ function ProjectsSection() {
                             </Card>
                         </a>
                     </Col>
-                    <Col span={8}>
+                    <Col xxl={8}>
                         <a href={"https://iangu.me/bubble-frontend/"}>
                             <Card
                                 type={"inner"}
@@ -469,7 +545,7 @@ function ProjectsSection() {
                                                 Bubble
                                             </Title>
                                             <Text style={{color: "#86867f"}}>
-                                                JavaScript · Express · Google Cloud API · Heroku
+                                                ExpressJs · Google Cloud Processing API · Heroku
                                             </Text>
                                         </div>
                                     }
@@ -483,8 +559,7 @@ function ProjectsSection() {
                             </Card>
                         </a>
                     </Col>
-
-                    <Col span={8}>
+                    <Col xxl={8}>
                         <a href={"https://blog.iangu.me"}>
                             <Card
                                 type={"inner"}
@@ -505,14 +580,12 @@ function ProjectsSection() {
                                                 Blog
                                             </Title>
                                             <Text style={{color: "#86867f"}}>
-                                                React.js · Firebase (Authentication, Firestore, Storage)
+                                                React.js · Firebase
                                             </Text>
                                         </div>
                                     }
                                     description={
-                                        "This was a blog I built to write about whatever I want. It supports CRUD " +
-                                        "operations, user authentication, and all files shown are stored on Firebase. " +
-                                        "Take a look!"
+                                        "This was a blog I built to share whatever I want. Take a look!"
                                     }
                                 />
                             </Card>
@@ -544,7 +617,7 @@ function ResumeSection() {
         setNumPages(numPages);
     }
     return (
-        <Row className={"h100"} justify={"center"} align={"middle"}>
+        <Row justify={"center"} align={"middle"} xs={10}>
             <Col offset={1}>
                 <Title level={2} style={{color: "white", marginTop: "30px", fontWeight: 300}}>Resume</Title>
                 <Button type={"primary"} size={"large"} style={{marginBottom: "10px", marginTop: "10px"}}>
@@ -555,13 +628,13 @@ function ResumeSection() {
                     </Link>
                 </Button>
             </Col>
+            {/*<Col offset={1}>*/}
+            {/*    <Divider type={"vertical"} style={{background: "white", height: "85vh", marginRight: "0"}}/>*/}
+            {/*</Col>*/}
+            {/*<Col>*/}
+            {/*    <Divider type={"vertical"} style={{background: "white", height: "90vh"}}/>*/}
+            {/*</Col>*/}
             <Col offset={1}>
-                <Divider type={"vertical"} style={{background: "white", height: "85vh", marginRight: "0"}}/>
-            </Col>
-            <Col>
-                <Divider type={"vertical"} style={{background: "white", height: "90vh"}}/>
-            </Col>
-            <Col offset={0}>
                 <div style={{overflowY: "scroll", height: "95vh"}}>
                     <Document
                         renderMode={"svg"}
@@ -573,12 +646,12 @@ function ResumeSection() {
                     </Document>
                 </div>
             </Col>
-            <Col>
-                <Divider type={"vertical"} style={{background: "white", height: "90vh", marginRight: 0}}/>
-            </Col>
-            <Col>
-                <Divider type={"vertical"} style={{background: "white", height: "85vh"}}/>
-            </Col>
+            {/*<Col>*/}
+            {/*    <Divider type={"vertical"} style={{background: "white", height: "90vh", marginRight: 0}}/>*/}
+            {/*</Col>*/}
+            {/*<Col>*/}
+            {/*    <Divider type={"vertical"} style={{background: "white", height: "85vh"}}/>*/}
+            {/*</Col>*/}
         </Row>
     );
 }
@@ -586,8 +659,8 @@ function ResumeSection() {
 function BlogSection() {
     return (
         <Row className={"h100"} justify={"center"} align={"middle"}>
-            <Col offset={1}>
-                <Title level={2} style={{color: "white", marginTop: "30px", marginBottom: 0, fontWeight: 300}}>Blog (prospective)</Title>
+            <Col offset={1} xs={10}>
+                <Title level={2} style={{color: "white", marginTop: "30px", marginBottom: 0, fontWeight: 300}}>Blog</Title>
 
                 <Space direction={"vertical"}>
                         <Space direction={"horizontal"} align={"baseline"}>
@@ -599,7 +672,9 @@ function BlogSection() {
 
                     <br/>
                     <Title level={5} style={{color: "white", textAlign: "left", marginBottom: 100, fontWeight: 300}}>
-                        This is where I plan to write about whatever I want, whenever I want.
+                        This is kind of like a time capsule that I will continue to build on over the years. I want to
+                        treat this both like an overview of my life, and a journal where I can keep track of whatever I
+                        want.
                     </Title>
 
                     <Button type={"primary"} size={"large"} style={{marginBottom: "10px", marginTop: "10px"}}>
