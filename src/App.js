@@ -374,7 +374,7 @@ function ExperienceSection() {
                 <Divider style={{background: "white", marginTop: "40px", marginBottom: "5px"}}/>
                 <Row align={"top"}>
                     <Col span={12}>
-                        <Title level={4} style={{color: "white", textAlign: "left", marginBottom: 0, fontWeight: 350}}>UTSC IITS (Toronto)</Title>
+                        <Title level={4} style={{color: "white", textAlign: "left", marginBottom: 0, fontWeight: 350}}>University of Toronto Scaborough Information & Instructional Technology Services (Toronto)</Title>
                         <Title level={5} style={{color: "#c6c5b9ff", textAlign: "left", marginBottom: 0, marginTop: 0, fontWeight: 400}}>Software Developer</Title>
                     </Col>
                     <Col span={12}>
@@ -389,14 +389,12 @@ function ExperienceSection() {
                         </Text>
                         {/*<Divider style={{marginTop: "2px", marginBottom: 0, background: "#c6c5b9ff"}}/>*/}
                         <Paragraph style={{color: "#fdfdffff", textAlign: "left", marginBottom: 0}}>
-                            • Reduced expected project duration by more than 4 months
+                            ●	Co-lead the migration of a legacy student service system from PHP to Java Spring Boot in order to build a more secure application
                             <br/>
-                            • Co-lead the migration of a legacy student service system from PHP backend to a modern Java
-                            Spring Boot version
+                            ●	Wrote MySQL migration scripts in order to mitigate inconsistencies among database and code
                             <br/>
-                            • Wrote migration scripts to rescheme database to fit different needs
-                            <br/>
-                            • Designed and refactored code to follow an MVC pattern with Spring Boot and Thymeleaf
+                            ●	Worked fast to write reusable code, reducing expected project duration by more than 4 months
+
                         </Paragraph>
                     </Col>
                 </Row>
