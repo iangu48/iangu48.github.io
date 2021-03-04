@@ -65,7 +65,7 @@ export default function ExperienceSection() {
                     <Col span={12}>
                         <Title level={5}
                                style={{color: "#c6c5b9ff", textAlign: "right", marginBottom: 0, fontWeight: 400}}>Sep
-                            2019 - Apr 2020 (8 months)</Title>
+                            2019 -- Apr 2020 (8 months)</Title>
                     </Col>
                 </Row>
                 <Row>
