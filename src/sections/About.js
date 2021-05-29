@@ -3,7 +3,6 @@ import javaIcon from "../static/icons/java.svg";
 import cIcon from "../static/icons/c-programming.svg"
 import pythonIcon from "../static/icons/python.svg";
 import dartIcon from "../static/icons/dart.svg";
-import springIcon from "../static/icons/spring.svg"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faJs} from "@fortawesome/free-brands-svg-icons";
 import htmlIcon from "../static/icons/html.svg";
@@ -103,9 +102,9 @@ export default function AboutSection() {
     return (
         <Row justify={"center"} align={"middle"}>
 
-            <Col xxl={8} offset={3}>
-                <Card hoverable cover={<Image src={aboutMeIan} style={{marginTop: "-1px"}}/>} style={{maxWidth: 400}}>
-                    <Typography style={{textAlign: "justify"}}>
+            <Col xxl={8} offset={3} style={{justifyContent: 'center'}}>
+                <Card hoverable cover={<Image src={aboutMeIan} style={{marginTop: "-1px"}}/>} style={{maxWidth: 400, backgroundColor: "transparent", border: 'none'}}>
+                    <Typography style={{textAlign: "justify", color: "white"}}>
                         I'm a full-time student and aspiring software engineer.
                         I'm always open to expanding my skill set and experiencing new things.
                         <br/>
@@ -117,11 +116,16 @@ export default function AboutSection() {
                         Before that, I got super interested in gardening and turned my backyard into a vegetable garden.
                         I grew cucumbers, tomatoes, pole beans, peppers, pumpkins, lettuce, spinach, ... the list goes
                         on and on.
+                        <br/>
+                        <br/>
+                        I am also interested in cars (although I can't afford anything fancy and currently drive an '11 civic)
+                        and aspire to one day own some very cool cars (NSX, GT-R, E30, and of course what kind of tech guy would
+                        I be if I didn't want a Tesla)
                         {/*    todo*/}
                     </Typography>
                 </Card>
             </Col>
-            <Col xxl={8} offset={0}>
+            <Col xxl={7} offset={0}>
                 <Title level={3} style={{color: "white", marginTop: "30px", fontWeight: 300}}>Education</Title>
                 <Divider style={{background: "white", marginTop: 0, marginBottom: "5px"}}/>
 

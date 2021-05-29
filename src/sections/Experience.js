@@ -9,14 +9,14 @@ import React from "react";
 
 export default function ExperienceSection() {
     return (
-        <Row className={"h100"} align={"middle"} justify={"center"}>
+        <Row align={"middle"} justify={"center"}>
             <Col span={16} offset={3}>
                 <Title level={2} style={{ color: "white", marginTop: "30px", fontWeight: 300 }}>
                     Relevant Work
                     Experience
                 </Title>
 
-                <Divider style={{ background: "white", marginTop: "40px", marginBottom: "5px" }} />
+                <Divider style={{ background: "white", marginTop: "40px"}} />
                 <Row align={"top"}>
                     <Col span={12}>
                         <Title level={4} style={{ color: "white", textAlign: "left", marginBottom: 0, fontWeight: 350 }}>
@@ -57,7 +57,7 @@ export default function ExperienceSection() {
                         </Paragraph>
                     </Col>
                 </Row>
-                <Divider style={{ background: "white", marginTop: "40px", marginBottom: "5px" }} />
+                <Divider style={{ background: "white", marginTop: "20px"}} />
                 <Row align={"top"}>
                     <Col span={12}>
                         <Title level={4} style={{ color: "white", textAlign: "left", marginBottom: 0, fontWeight: 350 }}>Shipenvoy
@@ -92,7 +92,7 @@ export default function ExperienceSection() {
                         </Paragraph>
                     </Col>
                 </Row>
-                <Divider style={{ background: "white", marginTop: "10px" }} />
+                <Divider style={{ background: "white", marginTop: "20px" }} />
                 <Row align={"top"}>
                     <Col span={12}>
                         <Title level={4} style={{ color: "white", textAlign: "left", marginBottom: 0, fontWeight: 350 }}>University
@@ -130,7 +130,7 @@ export default function ExperienceSection() {
                         </Paragraph>
                     </Col>
                 </Row>
-                <Divider style={{ background: "white", marginTop: "10px" }} />
+                <Divider style={{ background: "white", marginTop: "20px" }} />
                 <Button type={"primary"} size={"large"} style={{ marginBottom: "10px", marginTop: "150px" }}>
                     <Link to={"projects"} smooth={true} duration={700}>
                         <Space size={10}>
