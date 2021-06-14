@@ -51,7 +51,7 @@ export default function ExperienceSection() {
                         <Paragraph style={{ color: "#fdfdffff", textAlign: "left", marginBottom: 0, marginLeft: 5 }}>
                             ▪ Implemented enhancements to reduce user wait time on home page by over 50%
                             <br />
-                            ▪ Implemented new features in a fast-paced start-up environment with React-native, Flask
+                            ▪ Independently developed new features in a fast-paced start-up environment with React-native and Flask to meetrelease deadlines
                             <br />
                             ▪ Much more to come...
                         </Paragraph>
@@ -118,10 +118,10 @@ export default function ExperienceSection() {
                         </Text>
                         {/*<Divider style={{marginTop: "2px", marginBottom: 0, background: "#c6c5b9ff"}}/>*/}
                         <Paragraph style={{ color: "#fdfdffff", textAlign: "left", marginBottom: 0, marginLeft: 5 }}>
-                            ▪ Co-lead the migration of a legacy student service system from PHP to Java Spring Boot in
+                            ▪ Coordinated the migration of a legacy student service system from PHP to Java Spring Boot in
                             order to build a more secure application
                             <br />
-                            ▪ Wrote MySQL migration scripts in order to mitigate inconsistencies among database and code
+                            ▪ Authored MySQL migration scripts in order to mitigate inconsistencies among database and code
                             <br />
                             ▪ Escalated issues to address security concerns involving storing sensitive data
                             <br />
