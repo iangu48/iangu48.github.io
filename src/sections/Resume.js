@@ -38,7 +38,7 @@ export default function ResumeSection() {
             {/*    <Divider type={"vertical"} style={{background: "white", height: "90vh"}}/>*/}
             {/*</Col>*/}
             <Col offset={1}>
-                <div style={{overflowY: "scroll", height: "95vh"}}>
+                {/* <div style={{overflowY: "scroll", height: "95vh"}}> */}
                     <Document
                         renderMode={"svg"}
                         file={resumeFile}
@@ -47,7 +47,7 @@ export default function ResumeSection() {
                     >
                         <Page pageNumber={pageNumber} width={800} renderAnnotationLayer={false}/>
                     </Document>
-                </div>
+                {/* </div> */}
             </Col>
             {/*<Col>*/}
             {/*    <Divider type={"vertical"} style={{background: "white", height: "90vh", marginRight: 0}}/>*/}
