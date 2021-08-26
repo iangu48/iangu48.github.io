@@ -20,7 +20,7 @@ import blog3 from "../static/images/blog_3.png";
 import {Link} from "react-scroll";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faAngleDoubleDown} from "@fortawesome/free-solid-svg-icons";
-import React from "react";
+import React, {View} from "react";
 
 export default function ProjectsSection() {
     const s = {objectFit: "fill", height: 400, overflow: "hidden"}
@@ -202,7 +202,7 @@ export default function ProjectsSection() {
                     </Col>
                 </Row>
 
-                <Button type={"primary"} size={"large"} style={{marginBottom: "10px", marginTop: "150px"}}>
+                <Button type={"primary"} size={"large"} style={{marginBottom: "10px", marginTop: "10px"}}>
                     <Link to={"resume"} smooth={true} duration={700}>
                         <Space size={10}>
                             My Resume <FontAwesomeIcon icon={faAngleDoubleDown}/>

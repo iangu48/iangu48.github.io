@@ -45,15 +45,17 @@ export default function ExperienceSection() {
                 <Row>
                     <Col>
                         <Text style={{ color: "#e0ca3cff", textAlign: "left" }}>
-                            Javascript · React-native · Python · Flask · Mongodb · Elastic
+                            Javascript · React-native · Python · Flask · Mongodb · Elastic · Angular
                         </Text>
                         {/*<Divider style={{marginTop: "2px", marginBottom: 0, background: "#c6c5b9ff"}}/>*/}
                         <Paragraph style={{ color: "#fdfdffff", textAlign: "left", marginBottom: 0, marginLeft: 5 }}>
-                            ▪ Implemented enhancements to reduce user wait time on home page by over 50%
+                            ▪ Implemented enhancements in SQL queries to reduce user wait time on home page by over 50%
                             <br />
-                            ▪ Independently developed new features in a fast-paced start-up environment with React-native and Flask to meetrelease deadlines
+                            • Polished and implemented new features for a restaurant service, resulting in 800% increase in organic growth of restaurants using the service
                             <br />
-                            ▪ Much more to come...
+                            • Developed and released a gratitude journal app from scratch to supply some passive income to the company
+                            <br />
+                            • Experimented with new technologies by creating mini projects to investigate feasibility of new features
                         </Paragraph>
                     </Col>
                 </Row>
@@ -88,7 +90,7 @@ export default function ExperienceSection() {
                             ▪ Added a tracking system for packages, administrative tools for warehouse workers (batch
                             operations, csv imports/exports, package queries and CRUD), and user support system
                             <br />
-                            ▪ Used Github CI (continuous integration) to automate deployments on master merges
+                            ▪ Automated deployments with Github CI/CD to deploy quick fixes and adjustments at request of client
                         </Paragraph>
                     </Col>
                 </Row>
@@ -131,7 +133,7 @@ export default function ExperienceSection() {
                     </Col>
                 </Row>
                 <Divider style={{ background: "white", marginTop: "20px" }} />
-                <Button type={"primary"} size={"large"} style={{ marginBottom: "10px", marginTop: "150px" }}>
+                <Button type={"primary"} size={"large"} style={{ marginBottom: "10px", marginTop: "10px" }}>
                     <Link to={"projects"} smooth={true} duration={700}>
                         <Space size={10}>
                             Projects <FontAwesomeIcon icon={faAngleDoubleDown} />
