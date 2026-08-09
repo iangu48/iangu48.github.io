@@ -1,0 +1,39 @@
+name: Deploy
+
+# The site is plain HTML/CSS, so there is nothing to build — this just mirrors
+# the repo root onto the gh-pages branch that GitHub Pages serves from.
+#
+# If you'd rather have no CI at all: in repo Settings → Pages, set the source to
+# branch `master` / folder `/ (root)`, then delete this file.
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Publish to gh-pages
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          rsync -a --exclude '.git' --exclude '.github' ./ /tmp/site/
+          cd /tmp/site
+          git init -q -b gh-pages
+          git config user.name  'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -q -m "Deploy ${GITHUB_SHA:0:7}"
+          git push -f "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" gh-pages
