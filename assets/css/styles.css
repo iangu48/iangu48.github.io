@@ -1,0 +1,527 @@
+/* ==========================================================================
+   iangu.me — plain CSS, mobile first. No framework, no build step.
+   Palette carried over from the previous site: onyx background, citrine accent.
+   ========================================================================== */
+
+:root {
+  --bg: #202325;
+  --surface: #282c2e;
+  --surface-hover: #303538;
+  --border: #3a3f42;
+  --text: #f1f2f3;
+  --muted: #a3a8a6;
+  --accent: #e0ca3c;
+  --accent-ink: #1e2021;
+
+  --measure: 46rem;
+  --gutter: clamp(1.25rem, 5vw, 2.5rem);
+  --radius: 10px;
+
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  /* Never let a wide child force the whole page to scroll sideways. */
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  /* Anchor targets clear the sticky header. */
+  scroll-padding-top: 5rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0 var(--gutter) env(safe-area-inset-bottom);
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  font-weight: 600;
+  margin: 0;
+  /* Long org names should wrap, not overflow, on narrow screens. */
+  overflow-wrap: break-word;
+}
+
+p {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+}
+
+.skip-link:focus {
+  left: var(--gutter);
+  top: 0.5rem;
+  z-index: 10;
+  padding: 0.5rem 0.875rem;
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-radius: var(--radius);
+  text-decoration: none;
+}
+
+/* ── Header / nav ───────────────────────────────────────────────────────── */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  margin: 0 calc(var(--gutter) * -1);
+  padding: 0 var(--gutter);
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: var(--measure);
+  margin-inline: auto;
+  min-height: 3.5rem;
+}
+
+.nav__brand {
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.5rem, 3vw, 1.5rem);
+}
+
+.nav__list a {
+  display: inline-flex;
+  align-items: center;
+  /* 44px minimum touch target. */
+  min-height: 2.75rem;
+  padding-inline: 0.25rem;
+  color: var(--muted);
+  font-size: 0.9375rem;
+  text-decoration: none;
+}
+
+.nav__list a:hover {
+  color: var(--text);
+}
+
+/* ── Layout ─────────────────────────────────────────────────────────────── */
+
+main {
+  max-width: var(--measure);
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: clamp(2.5rem, 7vw, 4rem);
+  border-top: 1px solid var(--border);
+}
+
+.section__title {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1.75rem;
+}
+
+.section__title--sub {
+  margin-top: 3rem;
+}
+
+/* ── Hero ───────────────────────────────────────────────────────────────── */
+
+.hero {
+  max-width: var(--measure);
+  margin-inline: auto;
+  padding-block: clamp(2.5rem, 8vw, 4.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.hero__photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.hero__name {
+  font-size: clamp(2rem, 1.5rem + 2.4vw, 2.75rem);
+  letter-spacing: -0.02em;
+}
+
+.hero__title {
+  margin-top: 0.5rem;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.hero__blurb {
+  margin-top: 1rem;
+  color: var(--muted);
+  max-width: 34rem;
+}
+
+@media (min-width: 40rem) {
+  .hero {
+    flex-direction: row;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  .hero__photo {
+    width: 200px;
+    height: 200px;
+  }
+
+  .hero__body {
+    min-width: 0;
+  }
+}
+
+/* ── Buttons / link rows ────────────────────────────────────────────────── */
+
+.linklist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+  margin-top: 1.75rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn:hover {
+  background: var(--surface-hover);
+  border-color: var(--muted);
+}
+
+.btn--primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+
+.btn--primary:hover {
+  background: color-mix(in srgb, var(--accent) 85%, white);
+  border-color: color-mix(in srgb, var(--accent) 85%, white);
+}
+
+.icon {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+
+/* ── Roles ──────────────────────────────────────────────────────────────── */
+
+.roles {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.role__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.125rem 1rem;
+}
+
+.role__org {
+  font-size: 1.0625rem;
+}
+
+.role__when {
+  color: var(--muted);
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* Below ~350px the longer org names wrap the date onto its own line while the
+   short ones don't. Stack every date instead so the column stays consistent. */
+@media (max-width: 22rem) {
+  .role__head {
+    display: block;
+  }
+}
+
+.role__what {
+  margin-top: 0.125rem;
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+.sep {
+  opacity: 0.5;
+  padding-inline: 0.15rem;
+}
+
+.role__points {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.role__points li {
+  position: relative;
+  padding-left: 1.125rem;
+  font-size: 0.9375rem;
+  color: var(--text);
+}
+
+.role__points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* ── Earlier roles (collapsed) ──────────────────────────────────────────── */
+
+.earlier {
+  margin-top: 2rem;
+  border-top: 1px solid var(--border);
+  padding-top: 1.25rem;
+}
+
+.earlier summary {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  color: var(--muted);
+  font-size: 0.9375rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.earlier summary::-webkit-details-marker {
+  display: none;
+}
+
+.earlier summary::after {
+  content: "+";
+  margin-left: 0.5rem;
+  color: var(--accent);
+  font-size: 1.125rem;
+  line-height: 1;
+}
+
+.earlier[open] summary::after {
+  content: "\2212"; /* minus */
+}
+
+.earlier summary:hover {
+  color: var(--text);
+}
+
+.roles--compact {
+  padding-top: 0.75rem;
+}
+
+/* ── Project cards ──────────────────────────────────────────────────────── */
+
+.cards {
+  display: grid;
+  /* One column on phones, two once there's room — no breakpoint needed. */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  gap: 1rem;
+}
+
+.card {
+  position: relative;
+  padding: 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: border-color 0.15s ease;
+}
+
+.card:hover {
+  border-color: var(--muted);
+}
+
+.card:focus-within {
+  border-color: var(--accent);
+}
+
+.card__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.card__title {
+  font-size: 1.0625rem;
+}
+
+.card__year {
+  color: var(--muted);
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.card__title a {
+  text-decoration: none;
+}
+
+/* Stretches the title link over the whole card so the card is clickable,
+   without nesting interactive elements inside an anchor. */
+.card__title a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.card__desc {
+  margin-top: 0.5rem;
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+.card__tech {
+  margin-top: 0.875rem;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  letter-spacing: 0.02em;
+}
+
+/* ── 404 ────────────────────────────────────────────────────────────────── */
+
+.notfound {
+  max-width: var(--measure);
+  margin-inline: auto;
+  padding-block: clamp(4rem, 14vw, 8rem);
+}
+
+.notfound__code {
+  color: var(--accent);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.11em;
+}
+
+.notfound__title {
+  margin-top: 0.75rem;
+  font-size: clamp(1.75rem, 1.4rem + 1.8vw, 2.25rem);
+  letter-spacing: -0.02em;
+}
+
+.notfound__body {
+  margin-top: 0.75rem;
+  color: var(--muted);
+}
+
+/* ── Footer ─────────────────────────────────────────────────────────────── */
+
+.site-footer {
+  max-width: var(--measure);
+  margin-inline: auto;
+  padding-block: clamp(2.5rem, 7vw, 4rem);
+  border-top: 1px solid var(--border);
+}
+
+.footer__lead {
+  color: var(--muted);
+  max-width: 34rem;
+}
+
+.footer__fine {
+  margin-top: 2.5rem;
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+
+/* ── Motion ─────────────────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
