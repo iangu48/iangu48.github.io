@@ -422,8 +422,22 @@ main {
   border-color: var(--accent);
 }
 
+.card__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
 .card__title {
   font-size: 1.0625rem;
+}
+
+.card__year {
+  color: var(--muted);
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
 }
 
 .card__title a {
@@ -451,37 +465,30 @@ main {
   letter-spacing: 0.02em;
 }
 
-/* ── Skills ─────────────────────────────────────────────────────────────── */
+/* ── 404 ────────────────────────────────────────────────────────────────── */
 
-.skills {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+.notfound {
+  max-width: var(--measure);
+  margin-inline: auto;
+  padding-block: clamp(4rem, 14vw, 8rem);
 }
 
-.skills__row {
-  display: grid;
-  gap: 0.125rem;
-}
-
-.skills dt {
-  color: var(--muted);
+.notfound__code {
+  color: var(--accent);
   font-size: 0.8125rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.11em;
 }
 
-.skills dd {
-  margin: 0;
+.notfound__title {
+  margin-top: 0.75rem;
+  font-size: clamp(1.75rem, 1.4rem + 1.8vw, 2.25rem);
+  letter-spacing: -0.02em;
 }
 
-@media (min-width: 40rem) {
-  .skills__row {
-    grid-template-columns: 10rem 1fr;
-    gap: 1rem;
-    align-items: baseline;
-  }
+.notfound__body {
+  margin-top: 0.75rem;
+  color: var(--muted);
 }
 
 /* ── Footer ─────────────────────────────────────────────────────────────── */
